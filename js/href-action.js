@@ -12,6 +12,8 @@ function transliterate() {
         transliterated += transliterationMap[char] !== undefined ? transliterationMap[char] : char;
     }
 
+    transliterated += '-action'; // додаємо суфікс "-action"
+
     document.getElementById('result').innerText = transliterated;
 }
 
