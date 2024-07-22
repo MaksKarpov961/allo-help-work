@@ -16,14 +16,19 @@
   <body>
     <div class="container">
       <h1>Транскрипція Назви Акції</h1>
-      <input
-        class="input"
-        type="text"
-        id="ukrInput"
-        placeholder="Введіть назву акції українською"
-      />
-      <button onclick="transliterate()">Перевести</button>
-      <p class="result" id="result"></p>
+      <div class="container-box1">
+        <input
+          class="input"
+          type="text"
+          id="ukrInput"
+          placeholder="Введіть назву акції українською"
+        />
+        <button onclick="transliterate()">Перевести</button>
+      </div>
+      <div class="container-box2">
+        <input class="result-input" type="text" id="result" readonly />
+        <button onclick="copyToClipboard()">Скопіювати</button>
+      </div>
     </div>
     <script type="module" src="./js/href-action.js"></script>
   </body>

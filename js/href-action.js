@@ -14,7 +14,14 @@ function transliterate() {
 
     transliterated += '-action';
 
-    document.getElementById('result').innerText = transliterated;
+    document.getElementById('result').value = transliterated;
+}
+
+function copyToClipboard() {
+    const resultInput = document.getElementById('result');
+    resultInput.select();
+    document.execCommand('copy');
 }
 
 window.transliterate = transliterate;
+window.copyToClipboard = copyToClipboard;
