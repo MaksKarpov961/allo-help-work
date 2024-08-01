@@ -9,8 +9,14 @@ function transliterate() {
 
     let transliterated = '';
     for (let char of ukrInput) {
-        transliterated += transliterationMap[char] !== undefined ? transliterationMap[char] : char;
+        let transliteratedChar = transliterationMap[char] !== undefined ? transliterationMap[char] : char;
+        if (transliteratedChar === '-' && transliterated.endsWith('-')) {
+            continue; // Пропустити додавання повторного '-'
+        }
+        transliterated += transliteratedChar;
     }
+
+    transliterated = transliterated.replace(/-+/g, '-'); // Замінити всі послідовності '-' на один '-'
 
     transliterated += '-action';
 
