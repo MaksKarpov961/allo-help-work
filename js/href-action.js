@@ -83,8 +83,7 @@ function copyToClipboard() {
   const resultInput = document.getElementById("result");
   navigator.clipboard
     .writeText(resultInput.value)
-    .then(() => alert("Скопійовано!"))
-    .catch((err) => alert("Помилка копіювання: " + err));
+    .catch((err) => console.error("Помилка копіювання:", err));
 }
 
 window.transliterate = transliterate;
